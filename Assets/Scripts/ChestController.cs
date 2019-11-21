@@ -7,12 +7,16 @@ public class ChestController : MonoBehaviour
 {
 
     private Animator animator;
-    private int score;
+    private int score, limitOrda, tesouros;
+    private AudioSource audioSource;
+
+    public AudioClip openSound;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("open", false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,13 +30,19 @@ public class ChestController : MonoBehaviour
         Debug.Log("OTHER:" + other.gameObject.name);
         if (other.gameObject.name == "hero")
         {
-            animator.SetBool("open", true);
             Debug.Log("OPEN");
             // AudioSource.PlayClipAtPoint(deadScream, transform.position);
             score = PlayerPrefs.GetInt("deads");
-            score = 0;
-            PlayerPrefs.SetInt("deads", score);
-            PlayerPrefs.Save();
+            limitOrda = PlayerPrefs.GetInt("limitOrda");
+            if (score >= limitOrda)
+            {
+                audioSource.PlayOneShot(openSound);
+                animator.SetBool("open", true);
+                tesouros = PlayerPrefs.GetInt("tesouros");
+                tesouros++;
+                PlayerPrefs.SetInt("tesouros", tesouros);
+                PlayerPrefs.Save();
+            }
         }
 
     }

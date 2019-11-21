@@ -1,21 +1,13 @@
 fileFormatVersion: 2
 guid: 55da2b9bc83d6584bb2a01d2e87ac7c0
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: 322_0
-  - first:
-      213: 21300002
-    second: 322_1
-  - first:
-      213: 21300004
-    second: 322_2
-  - first:
-      213: 21300006
-    second: 322_3
+  fileIDToRecycleName:
+    21300000: 322_0
+    21300002: 322_1
+    21300004: 322_2
+    21300006: 322_3
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -70,7 +62,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -81,8 +73,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,8 +84,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -105,8 +95,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -117,7 +106,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -137,7 +125,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f272b5eb60bfaba4c8aecd29caa62d62
-      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -158,7 +145,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4d1548c1f3fbb6f4e8e1ce230223d506
-      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -179,7 +165,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 10b45be94a56e6d47b8e4968c3757911
-      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -200,7 +185,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d4053baaef3d0414ebc7a8a42065d527
-      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -209,12 +193,10 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: d226c900472006a4798a6e641f318531
-    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

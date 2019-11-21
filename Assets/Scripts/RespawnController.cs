@@ -11,41 +11,50 @@ public class RespawnController : MonoBehaviour
     public float timeRespawn;
 
     private float lastResp;
-    private int score;
+    private int bornCount;
+    private int limitOrda;
     // Start is called before the first frame update
     void Start()
     {
         lastResp = 0;
-        score = 0;
+        bornCount = 0;
+        StartCoroutine(this.respawEnimy());
     }
 
     // Update is called once per frame
     void Update()
     {
-        score = PlayerPrefs.GetInt("deads");
-        if ((Time.time - lastResp >= timeRespawn) && score <= 20)
-        {
-            lastResp = Time.time;
-            respawEnimy();
-        }
+        // score = PlayerPrefs.GetInt("deads");
+        // if ((Time.time - lastResp >= timeRespawn))
+        // {
+        //     lastResp = Time.time;
+        //     respawEnimy();
+        // }
     }
 
-    void respawEnimy()
+    IEnumerator respawEnimy()
     {
-        float born = Random.Range(1, 7);
-        float speed = Random.Range(2, 7);
-        GameObject enimySelected = enimy1;
-        if (born >= 3 && born <= 5)
+        limitOrda = PlayerPrefs.GetInt("limitOrda");
+        
+        while (bornCount < limitOrda)
         {
-            enimySelected = enimy2;
+            bornCount++;
+            float born = Random.Range(1, 7);
+            float speed = Random.Range(2, 7);
+            GameObject enimySelected = enimy1;
+            if (born >= 3 && born <= 5)
+            {
+                enimySelected = enimy2;
+            }
+            else if (born > 5)
+            {
+                enimySelected = enimy1;
+            }
+            GameObject newEnimy = Instantiate(enimySelected);
+            newEnimy.GetComponent<EnimyController>().speed = speed;
+            newEnimy.transform.position = refEnimy.position;
+            yield return new WaitForSeconds(timeRespawn);
         }
-        else if (born > 5)
-        {
-            enimySelected = enimy1;
-        }
-        GameObject newEnimy = Instantiate(enimySelected);
-        newEnimy.GetComponent<EnimyController>().speed = speed;
-        newEnimy.transform.position = refEnimy.position;
 
     }
 
